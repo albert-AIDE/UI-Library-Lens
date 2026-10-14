@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  body { font: 13px/1.5 system-ui, sans-serif; margin: 0; padding: 12px; width: 280px; color: #111827; }
+  h1 { font-size: 14px; margin: 0 0 8px; }
+  label.row { display: flex; align-items: center; gap: 8px; padding: 2px 0; cursor: pointer; }
+  .sw { width: 12px; height: 12px; border-radius: 2px; flex: none; }
+  .n { margin-left: auto; color: #6b7280; font-variant-numeric: tabular-nums; }
+  hr { border: 0; border-top: 1px solid #e5e7eb; margin: 8px 0; }
+  .note { color: #6b7280; font-size: 11px; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>UI Library Lens</h1>
+  <label class="row"><input type="checkbox" id="enabled" /> Outline components</label>
+  <label class="row"><input type="checkbox" id="showLegend" /> Show on-page legend</label>
+  <hr />
+  <div id="libs"></div>
+  <p class="note">Heuristic: detected from DOM class/ARIA fingerprints. TanStack Table, react-markdown, Framer Motion and utility libraries leave no DOM trace.</p>
+  <script src="rules.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

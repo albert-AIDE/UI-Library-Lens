@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "UI Library Lens",
+  "version": "1.2.0",
+  "description": "Outlines components on manage.mist.com by the UI library that renders them.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.mist.com/*",
+    "*://*.mistsys.com/*",
+    "*://*.mistsys.net/*",
+    "http://localhost/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "UI Library Lens"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.mist.com/*",
+        "*://*.mistsys.com/*",
+        "*://*.mistsys.net/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "react-roots.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://*.mist.com/*",
+        "*://*.mistsys.com/*",
+        "*://*.mistsys.net/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "rules.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
